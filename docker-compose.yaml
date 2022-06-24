@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  # CORS anywhere
+  cors:
+    image: cores-anywhere
+    restart: unless-stopped
+    build:
+      context: .
+    command: "node server.js"
+    ports:
+      - "8080:8080"
